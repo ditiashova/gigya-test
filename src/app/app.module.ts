@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AccountComponent } from './account/account.component';
 import { AccountService } from './account/account.service';
+import {MaterialModule} from './material.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AccountService } from './account/account.service';
     BrowserModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]
