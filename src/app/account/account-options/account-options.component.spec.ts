@@ -1,25 +1,38 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
 import {AccountOptionsComponent} from './account-options.component';
+import {AccountService} from '../account.service';
+import {Observable} from 'rxjs/Observable';
 
-describe('AccountComponent', () => {
+describe('AccountOptionsComponent', () => {
   let component: AccountOptionsComponent;
-  let fixture: ComponentFixture<AccountOptionsComponent>;
+  let accountServiceSpy;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AccountOptionsComponent]
-    })
-      .compileComponents();
-  }));
+  const activatedRouteMock = (readonlyMode) => ({
+    snapshot: {
+      data: {
+        readonlyMode
+      }
+    }
+  }) as any;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AccountOptionsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    accountServiceSpy = jasmine.createSpyObj('AccountService', ['getAccountOptions']);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should set readonlyMode to true if route data field readonlyMode is true', () => {
+    accountServiceSpy.getAccountOptions.and.returnValue(Observable.of());
+    component = new AccountOptionsComponent(accountServiceSpy, activatedRouteMock(true));
+
+    component.ngOnInit();
+
+    expect(component.readonlyMode).toBeTruthy();
+  });
+
+  it('should set readonlyMode to false if route data field readonlyMode is false', () => {
+    accountServiceSpy.getAccountOptions.and.returnValue(Observable.of());
+    component = new AccountOptionsComponent(accountServiceSpy, activatedRouteMock(false));
+
+    component.ngOnInit();
+
+    expect(component.readonlyMode).toBeFalsy();
   });
 });
