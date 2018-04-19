@@ -2,10 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpParams, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {URIEncoder} from './core.utils';
-
-const USER_KEY = 'AJA3Cw9XcJZf';
-const USER_SECRET = '1J+YxAY47khnuXf4GKSggLpPFBbQv8Hq';
-const API_KEY = '3_inujb44QPskKBok5VwhYnqy40eaVrwAJXXLsqaHRI_6DCM3KHhxNXjjcFQe0PASK';
+import {USER_KEY, USER_SECRET, API_KEY} from './core.constants';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
