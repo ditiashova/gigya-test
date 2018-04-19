@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpParams, HttpRequest, JsonpInterceptor} from '@angular/common/http';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpParams, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {BrowserStandardEncoder} from './core.utils';
 
@@ -8,7 +8,7 @@ const USER_SECRET = '1J+YxAY47khnuXf4GKSggLpPFBbQv8Hq';
 const API_KEY = '3_inujb44QPskKBok5VwhYnqy40eaVrwAJXXLsqaHRI_6DCM3KHhxNXjjcFQe0PASK';
 
 @Injectable()
-export class AuthInterceptor extends JsonpInterceptor {
+export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const authParams = new HttpParams({
