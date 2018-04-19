@@ -1,3 +1,7 @@
-<p>
-  response-card works!
-</p>
+<div class="card bg-light mb-3">
+  <div class="card-header">{{ statusCode }}: {{ response.statusCode }}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{ errorMessage }}</h5>
+    <p class="card-text">{{ response.errorMessage }}</p>
+  </div>
+</div>

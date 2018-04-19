@@ -2,12 +2,11 @@
   <div class="row">
     <div class="col">
       <h2>Account Options Form</h2>
-      <app-account-options-form
-        [options]="accountOptions"
-        [labels]="accountOptionsLabels"
-        [conflictsList]="loginIdentifierConflictsList">
+      <app-account-options-form [options]="accountOptions"
+                                [labels]="accountOptionsLabels"
+                                [conflictsList]="loginIdentifierConflictsList">
       </app-account-options-form>
-      <button type="submit" class="btn btn-success" (ngClick)="setAccountOptions()">Submit</button>
+      <button type="submit" class="btn btn-success" (click)="setAccountOptions()">Submit</button>
     </div>
     <div class="col">
       <h2>Account Options Request Details</h2>
@@ -15,13 +14,9 @@
         {{ accountOptions | json }}
       </pre>
       <hr/>
-      <div class="card bg-light mb-3" *ngIf="requestResult && requestResult.errorCode !== 0">
-        <div class="card-header">Status code: {{ requestResult.statusCode }}</div>
-        <div class="card-body">
-          <h5 class="card-title">Error message</h5>
-          <p class="card-text">{{ requestResult.errorMessage }}</p>
-        </div>
-      </div>
+      <app-response-card [response]="requestResult"
+                         *ngIf="requestResult && requestResult.errorCode !== 0">
+      </app-response-card>
     </div>
   </div>
 </div>

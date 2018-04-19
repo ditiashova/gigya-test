@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {RequestResult} from '../account/account.models';
 
 @Component({
   selector: 'app-response-card',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./response-card.component.scss']
 })
 export class ResponseCardComponent implements OnInit {
+  @Input() response: RequestResult;
+
+  protected statusCode = 'Status Code';
+  protected errorMessage = 'Error Message';
 
   constructor() { }
 
