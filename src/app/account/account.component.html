@@ -13,8 +13,6 @@
               [disabled]="readonlyMode">{{ accountLabels.SUBMIT }}</button>
     </div>
     <div class="col">
-      <app-code-preview [code]="accountOptions" [title]="accountLabels.ACCOUNT_OPTIONS"></app-code-preview>
-      <hr/>
       <app-response-card [response]="requestResult"
                          [labels]="accountLabels"
                          *ngIf="requestResult && requestResult.errorCode !== 0">
