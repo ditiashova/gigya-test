@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { AccountService } from './account.service';
-import { Account } from './account';
-import { Response } from './response';
-import { AccountOptions } from './account-options';
+import {Account, AccountOptionsLabels} from './account.models';
+import { RequestResult } from './account.models';
+import { AccountOptions } from './account.models';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -12,31 +12,31 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
 })
 export class AccountComponent implements OnInit {
   accountOptions: AccountOptions;
-  response: Response;
+  requestResult: RequestResult;
   loginIdentifierConflictsList = ['ignore', 'failOnSiteConflictingIdentity', 'failOnAnyConflictingIdentity'];
+  accountOptionsLabels: AccountOptionsLabels;
   // loginIdentifiersList = ['email', 'username', 'providerEmail'];
 
   constructor(
     private accountService: AccountService
-  ) {
-    this.response = null;
-  }
+  ) {  }
 
   ngOnInit() {
-      this.getAccountOptions();
+      this.initAccountOptions();
+      this.accountOptionsLabels = new AccountOptionsLabels();
   }
 
-  getAccountOptions() {
+  initAccountOptions() {
     this.accountService.getAccountOptions()
-      .subscribe((data: Account) => {
-        this.accountOptions = data.accountOptions;
+      .subscribe((data: AccountOptions) => {
+        this.accountOptions = data;
     });
   }
 
   setAccountOptions(): void {
     this.accountService.setAccountOptions(this.accountOptions)
-      .subscribe((response: Response) => {
-        this.response = response;
+      .subscribe((response: RequestResult) => {
+        this.requestResult = response;
       });
   }
 

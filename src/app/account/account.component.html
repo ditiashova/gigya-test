@@ -1,80 +1,27 @@
-<pre>
-  {{ accountOptions | json }}
-</pre>
-
 <div class="container">
-  <h1>Account Options Form</h1>
-  <form #accountOptionsForm="ngForm" (ngSubmit)="setAccountOptions()" novalidate>
-    <div class="form-group">
-      <label for="verifyEmail">Verify Email</label>
-      <input type="checkbox" class="form-control" id="verifyEmail" name="verifyEmail"
-             [(ngModel)]="accountOptions.verifyEmail" [disabled]="false">
+  <div class="row">
+    <div class="col">
+      <h2>Account Options Form</h2>
+      <app-account-options-form
+        [options]="accountOptions"
+        [labels]="accountOptionsLabels"
+        [conflictsList]="loginIdentifierConflictsList">
+      </app-account-options-form>
+      <button type="submit" class="btn btn-success" (ngClick)="setAccountOptions()">Submit</button>
     </div>
-
-    <div class="form-group">
-      <label for="verifyProviderEmail">Verify Provider Email</label>
-      <input type="checkbox" class="form-control" id="verifyProviderEmail" name="verifyProviderEmail"
-             [(ngModel)]="accountOptions.verifyProviderEmail" [disabled]="false">
+    <div class="col">
+      <h2>Account Options Request Details</h2>
+      <pre>
+        {{ accountOptions | json }}
+      </pre>
+      <hr/>
+      <div class="card bg-light mb-3" *ngIf="requestResult && requestResult.errorCode !== 0">
+        <div class="card-header">Status code: {{ requestResult.statusCode }}</div>
+        <div class="card-body">
+          <h5 class="card-title">Error message</h5>
+          <p class="card-text">{{ requestResult.errorMessage }}</p>
+        </div>
+      </div>
     </div>
-
-    <div class="form-group">
-      <label for="allowUnverifiedLogin">Allow Unverified Login</label>
-      <input type="checkbox" class="form-control" id="allowUnverifiedLogin" name="allowUnverifiedLogin"
-             [(ngModel)]="accountOptions.allowUnverifiedLogin" [disabled]="false">
-    </div>
-
-    <div class="form-group">
-      <label for="preventLoginIDHarvesting">Prevent Login ID Harvesting</label>
-      <input type="checkbox" class="form-control" id="preventLoginIDHarvesting" name="allowUnverifiedLogin"
-             [(ngModel)]="accountOptions.preventLoginIDHarvesting" [disabled]="false">
-    </div>
-
-    <div class="form-group">
-      <label for="sendWelcomeEmail">Send welcome email</label>
-      <input type="checkbox" class="form-control" id="sendWelcomeEmail" name="sendWelcomeEmail"
-             [(ngModel)]="accountOptions.sendWelcomeEmail" [disabled]="false">
-    </div>
-
-    <div class="form-group">
-      <label for="sendAccountDeletedEmail">Send Account Deleted Email</label>
-      <input type="checkbox" class="form-control" id="sendAccountDeletedEmail" name="sendAccountDeletedEmail"
-             [(ngModel)]="accountOptions.sendAccountDeletedEmail" [disabled]="false">
-    </div>
-
-    <div class="form-group">
-      <label for="defaultLanguage">Default language</label>
-      <input type="text" class="form-control" id="defaultLanguage" name="defaultLanguage" required
-             [(ngModel)]="accountOptions.defaultLanguage" [disabled]="false">
-    </div>
-
-    <div class="form-group">
-      <label for="loginIdentifierConflict">Login Identifier Conflict</label>
-      <select class="form-control" id="loginIdentifierConflict" name="loginIdentifierConflict" required
-              [(ngModel)]="accountOptions.loginIdentifierConflict" [disabled]="false">
-        <option *ngFor="let conflict of loginIdentifierConflictsList" [value]="conflict">{{ conflict }}</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="loginIdentifiers">Login Identifiers</label>
-      <select class="form-control" id="loginIdentifiers" name="loginIdentifiers" required multiple
-              [(ngModel)]="accountOptions.loginIdentifiers" [disabled]="false">
-        <option *ngFor="let identifier of loginIdentifiersList" [value]="identifier">{{ identifier }}</option>
-      </select>
-      <!--<mat-form-field>
-        <mat-select placeholder="Login Identifiers" [formControl]="identifiers" multiple [(value)]="accountOptions.loginIdentifiers">
-          &lt;!&ndash;[selected]="accountOptions.loginIdentifiers"&ndash;&gt;
-          <mat-option *ngFor="let identifier of loginIdentifiersList" [value]="identifier"
-                      [disabled]="false">
-            {{identifier}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>-->
-      <!--<label for="loginIdentifiers">Login Identifiers</label>
-      <input type="text" class="form-control" id="loginIdentifiers" name="loginIdentifiers" required
-             [(ngModel)]="accountOptions.loginIdentifiers" [disabled]="false">-->
-    </div>
-
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
+  </div>
 </div>
