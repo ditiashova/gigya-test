@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Gigya test';
+  modes = {NORMAL: 'Normal', READONLY: 'Readonly'}
 }

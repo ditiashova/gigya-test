@@ -20,6 +20,13 @@ export interface RequestResult {
   errorMessage?: string;
 }
 
+export class AccountLabels {
+  ACCOUNT_OPTIONS: string;
+  constructor() {
+    this.ACCOUNT_OPTIONS = 'Account Options';
+  }
+}
+
 export class AccountOptionsLabels {
   verifyEmail: string;
   verifyProviderEmail: string;

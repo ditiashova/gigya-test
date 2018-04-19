@@ -15,6 +15,7 @@ import {CoreModule} from './core/core.module';
 import { AccountOptionsFormComponent } from './account/account-options-form/account-options-form.component';
 import { ResponseCardComponent } from './response-card/response-card.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { CodePreviewComponent } from './code-preview/code-preview.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AppRoutingModule } from './/app-routing.module';
     AppComponent,
     AccountComponent,
     AccountOptionsFormComponent,
-    ResponseCardComponent
+    ResponseCardComponent,
+    CodePreviewComponent
   ],
   imports: [
     BrowserModule,
