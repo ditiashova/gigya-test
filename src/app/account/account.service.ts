@@ -15,14 +15,13 @@ export class AccountService {
   ) { }
 
   getAccountOptions(): Observable<AccountOptions> {
-
     const url = `${this.accountPoliciesUrl}.getPolicies?format=jsonp&callback=JSONP_CALLBACK`;
     return this.http.jsonp<Account>(url, 'JSONP_CALLBACK')
       .map(account => account.accountOptions);
   }
 
   setAccountOptions(data: AccountOptions): Observable<RequestResult> {
-    const setAccountPoliciesUrl = 'https://accounts.gigya.com/accounts.setPolicies?userkey=AJA3Cw9XcJZf&secret=1J%2BYxAY47khnuXf4GKSggLpPFBbQv8Hq&apikey=3_inujb44QPskKBok5VwhYnqy40eaVrwAJXXLsqaHRI_6DCM3KHhxNXjjcFQe0PASK&accountOptions=%7BsendWelcomeEmail%3Atrue%7D&format=jsonp&callback=JSONP_CALLBACK';
+    const setAccountPoliciesUrl = `${this.accountPoliciesUrl}.setPolicies?accountOptions=${encodeURIComponent(JSON.stringify(data))}&format=jsonp&callback=JSONP_CALLBACK`;
     return this.http.jsonp<RequestResult>(setAccountPoliciesUrl, 'JSONP_CALLBACK');
   }
 }
