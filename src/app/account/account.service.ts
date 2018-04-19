@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { catchError, map, tap } from 'rxjs/operators';
 import { Account } from './account.models';
 import { AccountOptions } from './account.models';
 import { RequestResult } from './account.models';
@@ -20,10 +19,6 @@ export class AccountService {
     const url = `${this.accountPoliciesUrl}.getPolicies?format=jsonp&callback=JSONP_CALLBACK`;
     return this.http.jsonp<Account>(url, 'JSONP_CALLBACK')
       .map(account => account.accountOptions);
-
-      /*.pipe(
-        catchError(this.handleError('getHeroes', []))
-      );*/
   }
 
   setAccountOptions(data: AccountOptions): Observable<RequestResult> {
