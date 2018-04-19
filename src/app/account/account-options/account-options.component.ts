@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {AccountService} from '../account.service';
 import {RequestResult} from '../account.models';
 import {AccountOptions} from '../account.models';
-
 import {ActivatedRoute} from '@angular/router';
 
 

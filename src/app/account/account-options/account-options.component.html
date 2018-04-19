@@ -17,7 +17,7 @@
 
     </div>
     <div class="col">
-      <app-response-card [response]="requestResult" *ngIf="requestResult && requestResult.errorCode !== 0"> </app-response-card>
+      <app-error-card [response]="requestResult" *ngIf="requestResult && requestResult.errorCode !== 0"></app-error-card>
     </div>
   </div>
 </div>

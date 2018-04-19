@@ -1,0 +1,1 @@
+export const JSONP_CALLBACK_NAME = 'JSONP_CALLBACK';

@@ -9,7 +9,7 @@ import {AccountOptionsFormComponent} from './account/account-options/account-opt
 import {MaterialModule} from './material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CoreModule} from './core/core.module';
-import {ResponseCardComponent} from './response-card/response-card.component';
+import {ErrorCardComponent} from './error-card/error-card.component';
 import {AppRoutingModule} from './app-routing.module';
 
 
@@ -18,7 +18,7 @@ import {AppRoutingModule} from './app-routing.module';
     AppComponent,
     AccountOptionsComponent,
     AccountOptionsFormComponent,
-    ResponseCardComponent
+    ErrorCardComponent
   ],
   imports: [
     BrowserModule,

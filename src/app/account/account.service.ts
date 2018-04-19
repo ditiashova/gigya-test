@@ -5,10 +5,12 @@ import {Account} from './account.models';
 import {AccountOptions} from './account.models';
 import {RequestResult} from './account.models';
 import 'rxjs/add/operator/map';
+import {JSONP_CALLBACK_NAME} from '../core/core.constants';
+
+const ACCOUNTS_ENDPOINT = 'https://accounts.gigya.com/accounts';
 
 @Injectable()
 export class AccountService {
-  accountPoliciesUrl = 'https://accounts.gigya.com/accounts';
 
   constructor(
     private http: HttpClient
@@ -16,13 +18,13 @@ export class AccountService {
   }
 
   getAccountOptions(): Observable<AccountOptions> {
-    const url = `${this.accountPoliciesUrl}.getPolicies`;
-    return this.http.jsonp<Account>(url, 'JSONP_CALLBACK')
+    const url = `${ACCOUNTS_ENDPOINT}.getPolicies`;
+    return this.http.jsonp<Account>(url, JSONP_CALLBACK_NAME)
       .map(account => account.accountOptions);
   }
 
   setAccountOptions(data: AccountOptions): Observable<RequestResult> {
-    const setAccountPoliciesUrl = `${this.accountPoliciesUrl}.setPolicies?accountOptions=${encodeURIComponent(JSON.stringify(data))}`;
-    return this.http.jsonp<RequestResult>(setAccountPoliciesUrl, 'JSONP_CALLBACK');
+    const setAccountPoliciesUrl = `${ACCOUNTS_ENDPOINT}.setPolicies?accountOptions=${encodeURIComponent(JSON.stringify(data))}`;
+    return this.http.jsonp<RequestResult>(setAccountPoliciesUrl, JSONP_CALLBACK_NAME);
   }
 }

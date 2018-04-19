@@ -2,12 +2,13 @@ import {Component, Input, OnInit} from '@angular/core';
 import {RequestResult} from '../account/account.models';
 
 @Component({
-  selector: 'app-response-card',
-  templateUrl: './response-card.component.html',
-  styleUrls: ['./response-card.component.scss']
+  selector: 'app-error-card',
+  templateUrl: './error-card.component.html',
+  styleUrls: ['./error-card.component.scss']
 })
-export class ResponseCardComponent implements OnInit {
+export class ErrorCardComponent implements OnInit {
   @Input() response: RequestResult;
+  @Input() title: string;
 
   constructor() {
   }
