@@ -14,6 +14,7 @@ import {AuthInterceptor} from './core/auth.interceptor';
 import {CoreModule} from './core/core.module';
 import { AccountOptionsFormComponent } from './account/account-options-form/account-options-form.component';
 import { ResponseCardComponent } from './response-card/response-card.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ResponseCardComponent } from './response-card/response-card.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [
     {
