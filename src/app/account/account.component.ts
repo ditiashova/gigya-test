@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { AccountService } from './account.service';
-import {Account, AccountLabels, AccountOptionsLabels} from './account.models';
+import { Account, AccountLabels, AccountOptionsLabels} from './account.models';
 import { RequestResult } from './account.models';
 import { AccountOptions } from './account.models';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -16,12 +16,12 @@ import { Location } from '@angular/common';
 })
 export class AccountComponent implements OnInit {
   accountLabels: AccountLabels;
+  accountOptionsLabels: AccountOptionsLabels;
+
   accountOptions: AccountOptions;
   requestResult: RequestResult;
   loginIdentifierConflictsList = ['ignore', 'failOnSiteConflictingIdentity', 'failOnAnyConflictingIdentity'];
-  accountOptionsLabels: AccountOptionsLabels;
   readonlyMode: boolean;
-  // loginIdentifiersList = ['email', 'username', 'providerEmail'];
 
   constructor(
     private accountService: AccountService,

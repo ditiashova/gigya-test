@@ -1,7 +1,7 @@
 <div class="card bg-light mb-3">
-  <div class="card-header">{{ statusCode }}: {{ response.statusCode }}</div>
+  <div class="card-header">{{ labels.STATUS_CODE }}: {{ response.statusCode }}</div>
   <div class="card-body">
-    <h5 class="card-title">{{ errorMessage }}</h5>
+    <h5 class="card-title">{{ labels.ERROR_MESSAGE }}</h5>
     <p class="card-text">{{ response.errorMessage }}</p>
   </div>
 </div>

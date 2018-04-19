@@ -1,3 +1,5 @@
+import {s} from '@angular/core/src/render3';
+
 export interface AccountOptions {
   verifyEmail: boolean;
   verifyProviderEmail: boolean;
@@ -21,33 +23,24 @@ export interface RequestResult {
 }
 
 export class AccountLabels {
-  ACCOUNT_OPTIONS: string;
-  constructor() {
-    this.ACCOUNT_OPTIONS = 'Account Options';
-  }
+  ACCOUNT_OPTIONS: string = 'Account Options';
+  READONLY_MODE: string = 'Readonly mode';
+  SUBMIT: string = 'Submit';
+  STATUS_CODE: string = 'Status Code';
+  ERROR_MESSAGE: string = 'Error Message';
+  constructor() {  }
 }
 
 export class AccountOptionsLabels {
-  verifyEmail: string;
-  verifyProviderEmail: string;
-  allowUnverifiedLogin: string;
-  preventLoginIDHarvesting: string;
-  sendWelcomeEmail: string;
-  sendAccountDeletedEmail: string;
-  defaultLanguage: string;
-  loginIdentifiers: string;
-  loginIdentifierConflict: string;
+  VERIFY_EMAIL: string = 'Verify Email';
+  VERIFY_PROVIDER_EMAIL: string = 'Verify Provider Email';
+  ALLOW_UNVERIFIED_LOGIN: string = 'Allow Unverified Login';
+  PREVENT_LOGIN_ID_HARVESTING: string = 'Prevent Login ID Harvesting';
+  SEND_WELCOME_EMAIL: string = 'Send Welcome Email';
+  SEND_ACCOUNT_DELETED_EMAIL: string = 'Send Account Deleted Email';
+  DEFAULT_LANGUAGE: string = 'Default Language';
+  LOGIN_IDENTIFIERS: string = 'Login Identifiers';
+  LOGIN_IDENTIFIERS_CONFLICT: string = 'Login Identifier Conflict';
 
-  constructor() {
-    this.verifyEmail = 'Verify Email';
-    this.verifyProviderEmail = 'Verify Provider Email';
-    this.allowUnverifiedLogin = 'Allow Unverified Login';
-    this.preventLoginIDHarvesting = 'Prevent Login ID Harvesting';
-    this.sendWelcomeEmail = 'Send Welcome Email';
-    this.sendAccountDeletedEmail = 'Send Account Deleted Email';
-    this.defaultLanguage = 'Default Language';
-    this.loginIdentifiers = 'Login Identifiers';
-    this.loginIdentifierConflict = 'Login Identifier Conflict';
-
-  }
+  constructor() {  }
 }

@@ -1,8 +1,8 @@
 <div class="container mb-3">
   <div class="row">
     <div class="col">
-      <h2>{{accountLabels.ACCOUNT_OPTIONS}} Form</h2>
-      <pre>Readonly mode: {{readonlyMode}}</pre>
+      <h2>{{ accountLabels.ACCOUNT_OPTIONS }} Form</h2>
+      <pre>{{ accountLabels.READONLY_MODE }}: {{readonlyMode}}</pre>
       <app-account-options-form [options]="accountOptions"
                                 [labels]="accountOptionsLabels"
                                 [conflictsList]="loginIdentifierConflictsList"
@@ -10,12 +10,13 @@
       </app-account-options-form>
       <button type="submit" class="btn btn-success"
               (click)="setAccountOptions()"
-              [disabled]="readonlyMode">Submit</button>
+              [disabled]="readonlyMode">{{ accountLabels.SUBMIT }}</button>
     </div>
     <div class="col">
       <app-code-preview [code]="accountOptions" [title]="accountLabels.ACCOUNT_OPTIONS"></app-code-preview>
       <hr/>
       <app-response-card [response]="requestResult"
+                         [labels]="accountLabels"
                          *ngIf="requestResult && requestResult.errorCode !== 0">
       </app-response-card>
     </div>

@@ -1,8 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RequestResult} from '../account/account.models';
-
-const STATUS_CODE = 'Status Code';
-const ERROR_MESSAGE = 'Error Message';
+import {AccountLabels, RequestResult} from '../account/account.models';
 
 @Component({
   selector: 'app-response-card',
@@ -11,9 +8,7 @@ const ERROR_MESSAGE = 'Error Message';
 })
 export class ResponseCardComponent implements OnInit {
   @Input() response: RequestResult;
-
-  protected statusCode = STATUS_CODE;
-  protected errorMessage = ERROR_MESSAGE;
+  @Input() labels: AccountLabels;
 
   constructor() { }
 
