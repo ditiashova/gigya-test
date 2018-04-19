@@ -8,9 +8,11 @@
                                 [conflictsList]="loginIdentifierConflictsList"
                                 [readonly]="readonlyMode">
       </app-account-options-form>
-      <button type="submit" class="btn btn-success"
+      <button mat-raised-button
+              color="accent" type="submit"
               (click)="setAccountOptions()"
               [disabled]="readonlyMode">{{ accountLabels.SUBMIT }}</button>
+
     </div>
     <div class="col">
       <app-response-card [response]="requestResult"

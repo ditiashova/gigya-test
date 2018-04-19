@@ -5,8 +5,10 @@
     </h1>
   </div>
   <nav>
-    <a class="btn btn-info" routerLink="">{{ modes.NORMAL }}</a>
-    <a class="btn btn-danger" routerLink="/readonly">{{ modes.READONLY }}</a>
+    <button mat-raised-button color="primary"
+            routerLink="">{{ modes.NORMAL }}</button>
+    <button mat-raised-button color="accent"
+            routerLink="/readonly">{{ modes.READONLY }}</button>
   </nav>
   <router-outlet></router-outlet>
 </div>
