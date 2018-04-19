@@ -1,13 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AccountService } from './account.service';
-import { Account, AccountLabels, AccountOptionsLabels} from './account.models';
+import { AccountLabels, AccountOptionsLabels} from './account.models';
 import { RequestResult } from './account.models';
 import { AccountOptions } from './account.models';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-
 
 @Component({
   selector: 'app-account',
@@ -25,8 +22,7 @@ export class AccountComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
-    private route: ActivatedRoute,
-    private location: Location
+    private route: ActivatedRoute
   ) {  }
 
   ngOnInit() {
