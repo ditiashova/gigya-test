@@ -5,6 +5,10 @@ import { RequestResult } from './account.models';
 import { AccountOptions } from './account.models';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
@@ -15,13 +19,17 @@ export class AccountComponent implements OnInit {
   requestResult: RequestResult;
   loginIdentifierConflictsList = ['ignore', 'failOnSiteConflictingIdentity', 'failOnAnyConflictingIdentity'];
   accountOptionsLabels: AccountOptionsLabels;
+  readonlyMode: boolean;
   // loginIdentifiersList = ['email', 'username', 'providerEmail'];
 
   constructor(
-    private accountService: AccountService
+    private accountService: AccountService,
+    private route: ActivatedRoute,
+    private location: Location
   ) {  }
 
   ngOnInit() {
+      this.readonlyMode = this.route.snapshot.data.readonlyMode;
       this.initAccountOptions();
       this.accountOptionsLabels = new AccountOptionsLabels();
   }
