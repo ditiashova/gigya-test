@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {AccountOptions, AccountOptionsLabels} from '../account.models';
+import {AccountOptions} from '../../account.models';
 
 @Component({
   selector: 'app-account-options-form',
@@ -8,9 +8,8 @@ import {AccountOptions, AccountOptionsLabels} from '../account.models';
 })
 export class AccountOptionsFormComponent implements OnInit {
   @Input() options: AccountOptions;
-  @Input() labels: AccountOptionsLabels;
-  @Input() conflictsList: Array<string>;
   @Input() readonly: boolean;
+  loginIdentifierConflictsList = ['ignore', 'failOnSiteConflictingIdentity', 'failOnAnyConflictingIdentity'];
 
   constructor() {
   }

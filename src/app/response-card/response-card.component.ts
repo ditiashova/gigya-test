@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AccountLabels, RequestResult} from '../account/account.models';
+import {RequestResult} from '../account/account.models';
 
 @Component({
   selector: 'app-response-card',
@@ -8,7 +8,6 @@ import {AccountLabels, RequestResult} from '../account/account.models';
 })
 export class ResponseCardComponent implements OnInit {
   @Input() response: RequestResult;
-  @Input() labels: AccountLabels;
 
   constructor() {
   }

@@ -1,0 +1,23 @@
+<div class="container mb-3">
+  <div *ngIf="!accountOptions" class="row d-flex justify-content-center">
+    <mat-spinner class="mt-2 mb-2"></mat-spinner>
+  </div>
+
+  <div *ngIf="accountOptions" class="row">
+    <div class="col">
+      <h2>Account Options Form</h2>
+
+      <pre>Readonly mode: {{readonlyMode}}</pre>
+
+      <app-account-options-form [options]="accountOptions" [readonly]="readonlyMode"></app-account-options-form>
+
+      <button mat-raised-button color="accent" type="submit" (click)="setAccountOptions()" [disabled]="readonlyMode">
+        SUBMIT
+      </button>
+
+    </div>
+    <div class="col">
+      <app-response-card [response]="requestResult" *ngIf="requestResult && requestResult.errorCode !== 0"> </app-response-card>
+    </div>
+  </div>
+</div>

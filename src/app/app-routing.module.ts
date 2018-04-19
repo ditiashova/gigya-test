@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AccountComponent} from './account/account.component';
+import {AccountOptionsComponent} from './account/account-options/account-options.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
-  {path: '', component: AccountComponent, data: {readonlyMode: false}},
-  {path: 'readonly', component: AccountComponent, data: {readonlyMode: true}},
+  {path: '', component: AccountOptionsComponent, data: {readonlyMode: false}},
+  {path: 'readonly', component: AccountOptionsComponent, data: {readonlyMode: true}},
 ];
 
 @NgModule({
