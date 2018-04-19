@@ -5,9 +5,12 @@
       <pre>Readonly mode: {{readonlyMode}}</pre>
       <app-account-options-form [options]="accountOptions"
                                 [labels]="accountOptionsLabels"
-                                [conflictsList]="loginIdentifierConflictsList">
+                                [conflictsList]="loginIdentifierConflictsList"
+                                [readonly]="readonlyMode">
       </app-account-options-form>
-      <button type="submit" class="btn btn-success" (click)="setAccountOptions()">Submit</button>
+      <button type="submit" class="btn btn-success"
+              (click)="setAccountOptions()"
+              [disabled]="readonlyMode">Submit</button>
     </div>
     <div class="col">
       <h2>Account Options Request Details</h2>

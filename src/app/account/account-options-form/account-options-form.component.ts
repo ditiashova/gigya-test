@@ -10,6 +10,7 @@ export class AccountOptionsFormComponent implements OnInit {
   @Input() options: AccountOptions;
   @Input() labels: AccountOptionsLabels;
   @Input() conflictsList: Array<string>;
+  @Input() readonly: boolean;
 
   constructor() { }
 

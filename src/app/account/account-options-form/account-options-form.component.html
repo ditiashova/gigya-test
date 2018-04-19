@@ -1,44 +1,44 @@
 <form #accountOptionsForm novalidate>
   <div class="form-group">
     <mat-checkbox id="verifyEmail" name="verifyEmail"
-                  [(ngModel)]="options.verifyEmail" [disabled]="false">
+                  [(ngModel)]="options.verifyEmail" [disabled]="readonly">
       {{ labels.verifyEmail }}
     </mat-checkbox>
   </div>
   <div class="form-group">
     <mat-checkbox id="verifyProviderEmail" name="verifyProviderEmail"
-                  [(ngModel)]="options.verifyProviderEmail" [disabled]="false">
+                  [(ngModel)]="options.verifyProviderEmail" [disabled]="readonly">
       {{ labels.verifyProviderEmail }}
     </mat-checkbox>
   </div>
   <div class="form-group">
     <mat-checkbox id="allowUnverifiedLogin" name="allowUnverifiedLogin"
-                  [(ngModel)]="options.allowUnverifiedLogin" [disabled]="false">
+                  [(ngModel)]="options.allowUnverifiedLogin" [disabled]="readonly">
       {{ labels.allowUnverifiedLogin }}
     </mat-checkbox>
   </div>
   <div class="form-group">
     <mat-checkbox id="preventLoginIDHarvesting" name="allowUnverifiedLogin"
-                  [(ngModel)]="options.preventLoginIDHarvesting" [disabled]="false">
+                  [(ngModel)]="options.preventLoginIDHarvesting" [disabled]="readonly">
       {{ labels.preventLoginIDHarvesting }}
     </mat-checkbox>
   </div>
   <div class="form-group">
     <mat-checkbox id="sendWelcomeEmail" name="sendWelcomeEmail"
-                  [(ngModel)]="options.sendWelcomeEmail" [disabled]="false">
+                  [(ngModel)]="options.sendWelcomeEmail" [disabled]="readonly">
       {{ labels.sendWelcomeEmail }}
     </mat-checkbox>
   </div>
   <div class="form-group">
     <mat-checkbox id="sendAccountDeletedEmail" name="sendAccountDeletedEmail"
-                  [(ngModel)]="options.sendAccountDeletedEmail" [disabled]="false">
+                  [(ngModel)]="options.sendAccountDeletedEmail" [disabled]="readonly">
       {{ labels.sendAccountDeletedEmail }}
     </mat-checkbox>
   </div>
   <div class="form-group">
     <mat-form-field class="w-100">
       <input matInput id="defaultLanguage" name="defaultLanguage" required
-             [(ngModel)]="options.defaultLanguage" [disabled]="false"
+             [(ngModel)]="options.defaultLanguage" [disabled]="readonly"
              placeholder="{{labels.defaultLanguage}}" value="options.defaultLanguage">
     </mat-form-field>
   </div>
@@ -46,7 +46,7 @@
   <div class="form-group">
     <mat-form-field class="w-100">
       <input matInput id="loginIdentifiers" name="loginIdentifiers" required
-             [(ngModel)]="options.loginIdentifiers" [disabled]="false"
+             [(ngModel)]="options.loginIdentifiers" [disabled]="readonly"
              placeholder="{{labels.loginIdentifiers}}" value="options.loginIdentifiers">
     </mat-form-field>
   </div>
@@ -55,7 +55,7 @@
     <label for="loginIdentifierConflict">{{labels.loginIdentifierConflict}}:</label>
     <mat-select id="loginIdentifierConflict" name="loginIdentifierConflict" required
                 placeholder="{{labels.loginIdentifierConflict}}" class="w-100"
-                [(ngModel)]="options.loginIdentifierConflict" [disabled]="false">
+                [(ngModel)]="options.loginIdentifierConflict" [disabled]="readonly">
       <mat-option *ngFor="let conflict of conflictsList" [value]="conflict">{{ conflict }}</mat-option>
     </mat-select>
   </div>
