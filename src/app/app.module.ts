@@ -13,13 +13,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AuthInterceptor} from './core/auth.interceptor';
 import {CoreModule} from './core/core.module';
 import { AccountOptionsFormComponent } from './account/account-options-form/account-options-form.component';
+import { ResponseCardComponent } from './response-card/response-card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AccountComponent,
-    AccountOptionsFormComponent
+    AccountOptionsFormComponent,
+    ResponseCardComponent
   ],
   imports: [
     BrowserModule,
