@@ -10,7 +10,8 @@ export class ResponseCardComponent implements OnInit {
   @Input() response: RequestResult;
   @Input() labels: AccountLabels;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

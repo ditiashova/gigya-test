@@ -28,7 +28,9 @@ export class AccountLabels {
   SUBMIT: string = 'Submit';
   STATUS_CODE: string = 'Status Code';
   ERROR_MESSAGE: string = 'Error Message';
-  constructor() {  }
+
+  constructor() {
+  }
 }
 
 export class AccountOptionsLabels {
@@ -42,5 +44,6 @@ export class AccountOptionsLabels {
   LOGIN_IDENTIFIERS: string = 'Login Identifiers';
   LOGIN_IDENTIFIERS_CONFLICT: string = 'Login Identifier Conflict';
 
-  constructor() {  }
+  constructor() {
+  }
 }

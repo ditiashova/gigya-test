@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {AccountOptions, AccountOptionsLabels} from '../account.models';
 
 @Component({
@@ -12,7 +12,8 @@ export class AccountOptionsFormComponent implements OnInit {
   @Input() conflictsList: Array<string>;
   @Input() readonly: boolean;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

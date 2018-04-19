@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AccountOptionsFormComponent } from './account-options-form.component';
+import {AccountOptionsFormComponent} from './account-options-form.component';
 
 describe('AccountOptionsFormComponent', () => {
   let component: AccountOptionsFormComponent;
@@ -8,9 +8,9 @@ describe('AccountOptionsFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccountOptionsFormComponent ]
+      declarations: [AccountOptionsFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

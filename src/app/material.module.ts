@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import { MatButtonModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatProgressSpinnerModule } from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatProgressSpinnerModule} from '@angular/material';
 
 @NgModule({
   exports: [
@@ -11,4 +11,5 @@ import { MatButtonModule, MatCheckboxModule, MatInputModule, MatSelectModule, Ma
   ]
 })
 
-export class MaterialModule { }
+export class MaterialModule {
+}
